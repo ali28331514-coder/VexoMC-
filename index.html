@@ -9,55 +9,72 @@
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Orbitron','Courier New',monospace;background:radial-gradient(circle at 20% 80%,#8B0000 0%,#1a1a2e 50%,#16213e 100%);min-height:100vh;overflow:hidden;position:relative;color:#fff}
         .stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;background:radial-gradient(2px 2px at 20px 30px, #ff4444, transparent),radial-gradient(2px 2px at 40px 70px, #ff6666, transparent);background-repeat:repeat;background-size:100px 100px;animation:twinkle 15s linear infinite}
-        .container{position:relative;background:linear-gradient(145deg,rgba(139,0,0,.95),rgba(26,26,46,.98));backdrop-filter:blur(25px);border-radius:30px;padding:40px;box-shadow:0 30px 80px rgba(255,68,68,.4);max-width:500px;width:95%;margin:20px auto;text-align:center;border:2px solid rgba(255,68,68,.6)}
-        .minecraft-text{font-size:2.8em;font-weight:900;background:linear-gradient(45deg,#ff4444,#ff6666,#ff9999,#ff6666,#ff4444,#cc0000,#ff4444);background-size:600% 600%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbowShift 2s linear infinite;margin-bottom:15px;letter-spacing:2px;text-shadow:0 0 20px rgba(255,68,68,.8)}
-        .server-ip{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,#ff4444,#cc0000);padding:20px 30px;margin:20px 0;border-radius:20px;cursor:pointer;transition:all .3s ease;border:3px solid rgba(255,68,68,.8);display:inline-block;box-shadow:0 10px 30px rgba(255,68,68,.5)}
-        .server-ip:hover{transform:scale(1.05);box-shadow:0 20px 40px rgba(255,68,68,.7)}
-        .copy-btn{background:linear-gradient(135deg,#ff4444,#cc0000);color:#fff;border:none;padding:15px 35px;font-size:1.1em;border-radius:25px;cursor:pointer;margin:20px 0;transition:all .3s ease;box-shadow:0 8px 25px rgba(255,68,68,.5);font-weight:700}
-        .copy-btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,68,68,.7)}
-        .status-bar{display:flex;align-items:center;justify-content:center;gap:10px;margin:15px 0;padding:10px 20px;background:rgba(255,68,68,.3);border-radius:20px;border:1px solid #ff4444;box-shadow:0 0 20px rgba(255,68,68,.4)}
-        .status{width:10px;height:10px;border-radius:50%;background:#ff4444;box-shadow:0 0 15px #ff4444;animation:pulse 1.5s infinite}
-        .platforms{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin:25px 0}
-        .platform{width:65px;height:65px;border-radius:15px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6em;text-decoration:none;transition:all .3s ease;box-shadow:0 8px 25px rgba(0,0,0,.4)}
-        .platform:hover{transform:translateY(-8px) scale(1.1);box-shadow:0 20px 40px rgba(255,68,68,.6)}
+        .container{position:relative;background:linear-gradient(145deg,rgba(139,0,0,.95),rgba(26,26,46,.98));backdrop-filter:blur(25px);border-radius:30px;padding:30px;box-shadow:0 30px 80px rgba(255,68,68,.4);max-width:500px;width:95%;margin:20px auto;text-align:center;border:2px solid rgba(255,68,68,.6)}
+        
+        /* العنوان في الأعلى */
+        .minecraft-text{font-size:2.5em;font-weight:900;background:linear-gradient(45deg,#ff4444,#ff6666,#ff9999,#ff6666,#ff4444,#cc0000,#ff4444);background-size:600% 600%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbowShift 2s linear infinite;margin-bottom:15px;letter-spacing:2px;text-shadow:0 0 20px rgba(255,68,68,.8)}
+        
+        /* الـ IP في الوسط - أكبر */
+        .ip-section{margin:20px 0;padding:25px;background:rgba(255,68,68,.3);border-radius:25px;border:3px solid rgba(255,68,68,.7);box-shadow:0 20px 50px rgba(255,68,68,.4);position:relative;overflow:hidden}
+        .server-ip{display:inline-block;font-size:2.8em;font-weight:900;background:linear-gradient(135deg,#ff6666,#ff4444,#cc0000);padding:25px 40px;margin:0 auto;border-radius:20px;cursor:pointer;transition:all .4s ease;border:4px solid rgba(255,255,255,.3);box-shadow:0 15px 40px rgba(255,68,68,.6);text-shadow:0 0 20px rgba(255,255,255,.5)}
+        .server-ip::before{content:'🎮';position:absolute;top:10px;right:15px;font-size:1.5em;opacity:.7}
+        .server-ip:hover{transform:scale(1.08);box-shadow:0 25px 60px rgba(255,68,68,.8);border-color:rgba(255,255,255,.6)}
+        
+        /* زر النسخ تحت الـ IP */
+        .copy-btn{background:linear-gradient(135deg,#ff4444,#cc0000);color:#fff;border:none;padding:15px 35px;font-size:1.1em;border-radius:25px;cursor:pointer;margin:15px auto;display:block;transition:all .3s ease;box-shadow:0 10px 30px rgba(255,68,68,.5);font-weight:700}
+        .copy-btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(255,68,68,.7)}
+        
+        .status-bar{display:flex;align-items:center;justify-content:center;gap:10px;margin:20px 0;padding:12px 25px;background:rgba(255,68,68,.3);border-radius:20px;border:1px solid #ff4444;box-shadow:0 0 20px rgba(255,68,68,.4)}
+        .status{width:12px;height:12px;border-radius:50%;background:#ff4444;box-shadow:0 0 20px #ff4444;animation:pulse 1.5s infinite}
+        
+        /* القايمة في الوسط - تحت الـ IP */
+        .qaim{position:relative;margin:25px auto;padding:25px;background:rgba(255,68,68,.25);border-radius:25px;border:2px solid rgba(255,68,68,.6);backdrop-filter:blur(15px);max-width:420px;box-shadow:0 20px 50px rgba(255,68,68,.3)}
+        .qaim-title{font-size:1.4em;margin-bottom:20px;background:linear-gradient(45deg,#ff6666,#ff4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900;text-align:center}
+        .qaim-list{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:15px}
+        .qaim-item{padding:15px;background:rgba(255,255,255,.2);border-radius:15px;transition:all .3s ease;border:1px solid rgba(255,255,255,.3);text-align:center;font-size:1.1em;font-weight:700;position:relative;overflow:hidden}
+        .qaim-item::before{content:'⚡';position:absolute;top:8px;right:12px;font-size:1.2em;opacity:.7}
+        .qaim-item:hover{background:rgba(255,68,68,.5);border-color:#ff6666;transform:translateY(-5px) scale(1.02);box-shadow:0 15px 35px rgba(255,68,68,.5)}
+        
+        .platforms{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin:25px 0 15px 0}
+        .platform{width:60px;height:60px;border-radius:15px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5em;text-decoration:none;transition:all .3s ease;box-shadow:0 8px 25px rgba(0,0,0,.4);border:2px solid rgba(255,255,255,.2)}
+        .platform:hover{transform:translateY(-8px) scale(1.15);box-shadow:0 20px 40px rgba(255,68,68,.6)}
         .platform.server{background:linear-gradient(135deg,#ff4444,#cc0000)}
         .platform.discord{background:linear-gradient(135deg,#7289da,#5865f2)}
         .platform.tiktok{background:linear-gradient(135deg,#ff6b6b,#ee5a52)}
         .platform.youtube{background:linear-gradient(135deg,#f39c12,#e67e22)}
-        
-        /* القايمة في الوسط */
-        .qaim{position:relative;margin:25px auto;padding:25px;background:rgba(255,68,68,.2);border-radius:25px;border:2px solid rgba(255,68,68,.5);backdrop-filter:blur(15px);max-width:400px;box-shadow:0 15px 40px rgba(255,68,68,.3)}
-        .qaim-title{font-size:1.4em;margin-bottom:20px;background:linear-gradient(45deg,#ff6666,#ff4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
-        .qaim-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:10px}
-        .qaim-item{padding:12px 15px;background:rgba(255,255,255,.15);border-radius:15px;transition:all .3s ease;border:1px solid rgba(255,255,255,.2);text-align:center;font-size:1em;font-weight:600}
-        .qaim-item:hover{background:rgba(255,68,68,.4);border-color:#ff6666;transform:translateY(-3px);box-shadow:0 10px 25px rgba(255,68,68,.4)}
         
         @keyframes rainbowShift{0%{background-position:0% 50%}100%{background-position:600% 50%}}
         @keyframes twinkle{0%,100%{opacity:.3}50%{opacity:1}}
         @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.2)}}
         
         @media (max-width:600px){
-            .minecraft-text{font-size:2.2em}
-            .server-ip{font-size:1.9em;padding:18px 25px}
-            .platform{width:55px;height:55px;font-size:1.4em}
+            .minecraft-text{font-size:2em}
+            .server-ip{font-size:2.3em;padding:20px 30px}
             .qaim-list{grid-template-columns:1fr}
-            .qaim{padding:20px}
+            .platform{width:55px;height:55px;font-size:1.3em}
+            .ip-section{padding:20px}
         }
     </style>
 </head>
 <body>
     <div class="stars"></div>
     <div class="container">
+        <!-- العنوان -->
         <div class="minecraft-text">سرفر تدريب بكس بفب</div>
-        <div class="server-ip" onclick="copyIP()">vexomc.play.hosting</div>
-        <button class="copy-btn" onclick="copyIP()">⚔️ انضم للسيرفر</button>
         
+        <!-- الـ IP في الوسط مع صندوق خاص -->
+        <div class="ip-section">
+            <div class="server-ip" onclick="copyIP()">vexomc.play.hosting</div>
+            <button class="copy-btn" onclick="copyIP()">⚔️ انضم الآن</button>
+        </div>
+        
+        <!-- حالة السيرفر -->
         <div class="status-bar">
             <div class="status"></div>
             <span>🔴 سرفر بكس بفب شغال</span>
         </div>
         
-        <!-- القايمة في الوسط - شبكة 2x2 -->
+        <!-- القايمة في الوسط -->
         <div class="qaim">
             <div class="qaim-title">🏆 قايمة التدريب:</div>
             <div class="qaim-list">
@@ -68,6 +85,7 @@
             </div>
         </div>
         
+        <!-- المنصات -->
         <div class="platforms">
             <a href="https://vexomc.play.hosting" class="platform server" title="السيرفر"><i class="fas fa-sword"></i></a>
             <a href="https://discord.gg/t8YaQxZZ" class="platform discord" title="ديسكورد"><i class="fab fa-discord"></i></a>
@@ -81,12 +99,15 @@
         function copyIP(){
             navigator.clipboard.writeText(IP).then(()=>{
                 const btn = document.querySelector(".copy-btn");
+                const ipEl = document.querySelector(".server-ip");
                 const oldText = btn.innerHTML;
                 btn.innerHTML = "✅ تم النسخ!";
                 btn.style.background = "#00ff88";
+                ipEl.style.background = "#00ff88";
                 setTimeout(()=>{
                     btn.innerHTML = oldText;
                     btn.style.background = "";
+                    ipEl.style.background = "";
                 }, 2000);
             }).catch(()=>alert("انسخ: "+IP));
         }
