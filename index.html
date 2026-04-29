@@ -13,18 +13,18 @@
         
         .minecraft-text{font-size:clamp(3em,9vw,5.5em);font-weight:900;background:linear-gradient(45deg,#ff4444,#ff6666,#ff4444,#cc0000);background-size:400% 400%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbowShift 1.5s linear infinite;margin-bottom:30px;letter-spacing:5px;text-shadow:0 0 40px rgba(255,68,68,1)}
         
-        .ip-section{position:relative;margin:30px 0;padding:35px 25px;background:rgba(255,68,68,.5);border-radius:30px;border:5px solid rgba(255,68,68,1);box-shadow:0 30px 70px rgba(255,68,68,.7);min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-        .server-ip{display:inline-block;font-size:clamp(2em,7vw,3.2em);font-weight:900;background:linear-gradient(135deg,#ff6666,#ff4444,#cc0000);padding:25px 50px;margin:10px 0;border-radius:25px;cursor:pointer;transition:all .4s ease;border:5px solid rgba(255,255,255,.9);box-shadow:0 20px 50px rgba(255,68,68,.8);text-shadow:0 0 25px rgba(255,255,255,1);white-space:nowrap;min-width:280px;position:relative;z-index:2}
-        .server-ip::before{content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:60px;height:60px;background:radial-gradient(circle,#fff,transparent);border-radius:50%;opacity:0.3;z-index:-1}
-        .server-ip:hover{transform:scale(1.08) translateY(-5px);box-shadow:0 35px 80px rgba(255,68,68,1);border-color:#fff}
+        .ip-section{position:relative;margin:30px 0;padding:35px 25px;background:rgba(0,255,136,.3);border-radius:30px;border:5px solid rgba(0,255,136,1);box-shadow:0 30px 70px rgba(0,255,136,.6);min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+        .server-ip{display:inline-block;font-size:clamp(2.5em,9vw,4em);font-weight:900;background:linear-gradient(135deg,#00ff88,#00cc66,#00ff88);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding:35px 70px;margin:10px 0;border-radius:30px;cursor:pointer;transition:all .4s ease;border:6px solid rgba(255,255,255,1);box-shadow:0 25px 60px rgba(0,255,136,.9),inset 0 0 30px rgba(255,255,255,.3);text-shadow:0 0 30px rgba(0,255,255,1);white-space:nowrap;min-width:350px;position:relative;z-index:2;animation:ipGlow 2s ease-in-out infinite alternate}
+        .server-ip::before{content:'';position:absolute;top:-15px;left:50%;transform:translateX(-50%);width:80px;height:80px;background:radial-gradient(circle,#00ff88,transparent);border-radius:50%;opacity:0.4;z-index:-1}
+        .server-ip:hover{transform:scale(1.1) translateY(-8px);box-shadow:0 45px 100px rgba(0,255,136,1),inset 0 0 40px rgba(255,255,255,.5);border-color:#fff;animation-play-state:paused}
         
-        .copy-btn{background:linear-gradient(135deg,#ff4444,#cc0000);color:#fff;border:none;padding:22px 55px;font-size:1.5em;border-radius:30px;cursor:pointer;margin:15px auto;display:block;transition:all .4s ease;box-shadow:0 20px 50px rgba(255,68,68,.7);font-weight:900;text-transform:uppercase;letter-spacing:2px;position:relative;overflow:hidden}
-        .copy-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left .6s}
-        .copy-btn:hover{transform:translateY(-8px);box-shadow:0 30px 70px rgba(255,68,68,.9)}
+        .copy-btn{background:linear-gradient(135deg,#00ff88,#00cc66);color:#000;border:none;padding:25px 65px;font-size:1.8em;border-radius:35px;cursor:pointer;margin:20px auto;display:block;transition:all .4s ease;box-shadow:0 25px 60px rgba(0,255,136,.8);font-weight:900;text-transform:uppercase;letter-spacing:3px;position:relative;overflow:hidden}
+        .copy-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:left .6s}
+        .copy-btn:hover{transform:translateY(-10px);box-shadow:0 40px 90px rgba(0,255,136,1)}
         .copy-btn:hover::before{left:100%}
         
-        .status-bar{display:flex;align-items:center;justify-content:center;gap:15px;margin:30px 0;padding:20px 40px;background:rgba(255,68,68,.6);border-radius:28px;border:4px solid #ff4444;box-shadow:0 0 35px rgba(255,68,68,.7)}
-        .status{width:20px;height:20px;border-radius:50%;background:#ff4444;box-shadow:0 0 30px #ff4444;animation:pulse 1s infinite}
+        .status-bar{display:flex;align-items:center;justify-content:center;gap:15px;margin:30px 0;padding:20px 40px;background:rgba(0,255,136,.4);border-radius:28px;border:4px solid #00ff88;box-shadow:0 0 35px rgba(0,255,136,.7)}
+        .status{width:20px;height:20px;border-radius:50%;background:#00ff88;box-shadow:0 0 30px #00ff88;animation:pulse 1s infinite}
         
         /* القايمة - Box PvP بس */
         .qaim{position:relative;margin:35px auto;padding:40px 30px;background:linear-gradient(145deg,rgba(255,68,68,.45),rgba(204,0,0,.65));border-radius:32px;border:4px solid rgba(255,68,68,1);backdrop-filter:blur(25px);max-width:420px;box-shadow:0 35px 80px rgba(255,68,68,.6)}
@@ -48,6 +48,11 @@
             100%{box-shadow:0 25px 70px rgba(88,101,242,.9),inset 0 0 30px rgba(255,255,255,.3)}
         }
         
+        @keyframes ipGlow{
+            0%{box-shadow:0 25px 60px rgba(0,255,136,.9),inset 0 0 30px rgba(255,255,255,.3)}
+            100%{box-shadow:0 25px 60px rgba(0,255,136,1),inset 0 0 40px rgba(255,255,255,.5)}
+        }
+        
         @keyframes rainbowShift{0%{background-position:0% 50%}100%{background-position:400% 50%}}
         @keyframes twinkle{0%,100%{opacity:.3}50%{opacity:1}}
         @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.4)}}
@@ -55,23 +60,24 @@
         @media (max-width:768px){
             .container{padding:40px 25px;height:96vh;width:95%;border-radius:25px}
             .minecraft-text{letter-spacing:3px}
-            .ip-section{padding:30px 20px;min-height:110px}
-            .server-ip{padding:22px 40px;min-width:250px}
+            .ip-section{padding:30px 20px;min-height:130px}
+            .server-ip{padding:28px 50px;min-width:300px}
             .qaim{max-width:95%;padding:35px 25px}
             .platform{width:110px;height:110px;font-size:3.2em}
         }
         
         @media (max-width:480px){
             .container{padding:30px 20px;border-radius:20px}
-            .server-ip{padding:20px 35px;font-size:2em}
+            .server-ip{padding:25px 40px;font-size:2.5em;min-width:280px}
+            .copy-btn{padding:20px 45px;font-size:1.5em}
             .platform{width:95px;height:95px;font-size:2.8em}
         }
         
         /* Scrollbar مخصص */
         .container::-webkit-scrollbar{width:12px}
-        .container::-webkit-scrollbar-track{background:rgba(255,255,255,.1);border-radius:12px}
-        .container::-webkit-scrollbar-thumb{background:linear-gradient(#ff4444,#ff6666);border-radius:12px}
-        .container::-webkit-scrollbar-thumb:hover{background:linear-gradient(#ff6666,#ff4444)}
+        .container::-webkit-scrollbar-track{background:rgba(0,255,136,.2);border-radius:12px}
+        .container::-webkit-scrollbar-thumb{background:linear-gradient(#00ff88,#00cc66);border-radius:12px}
+        .container::-webkit-scrollbar-thumb:hover{background:linear-gradient(#00cc66,#00ff88)}
     </style>
 </head>
 <body>
@@ -110,8 +116,8 @@
                 const ipEl = document.querySelector(".server-ip");
                 const oldText = btn.innerHTML;
                 btn.innerHTML = "✅ Copied!";
-                btn.style.background = "linear-gradient(135deg, #00ff88, #00cc66)";
-                ipEl.style.background = "linear-gradient(135deg, #00ff88, #00cc66)";
+                btn.style.background = "linear-gradient(135deg, #00ff00, #32cd32)";
+                ipEl.style.background = "linear-gradient(135deg, #00ff00, #32cd32)";
                 setTimeout(()=>{
                     btn.innerHTML = oldText;
                     btn.style.background = "";
