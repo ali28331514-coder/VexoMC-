@@ -1,1 +1,49 @@
-
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VexoMC - IP السيرفر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <div class="minecraft-text pulse">VexoMC</div>
+        <div class="server-ip glow" onclick="copyIP()">
+            <span class="ip-text">vexomc.play.hosting</span>
+            <div class="particles"></div>
+        </div>
+        <button class="copy-btn neon" onclick="copyIP()">
+            <i class="fas fa-copy"></i> نسخ IP السيرفر
+        </button>
+        
+        <div class="status-bar">
+            <div class="status online"></div>
+            <span>السيرفر شغال 🟢</span>
+        </div>
+        
+        <div class="platforms creative">
+            <a href="https://vexomc.play.hosting" class="platform server diamond" title="Server IP">
+                <i class="fas fa-gem"></i>
+            </a>
+            <a href="https://discord.gg/t8YaQxZZ" class="platform discord crystal">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://www.tiktok.com/@rynoxmc1" class="platform tiktok fire">
+                <i class="fas fa-fire"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCijZ7gc_WXjYEOE-dpLieBA" class="platform youtube lightning">
+                <i class="fas fa-bolt"></i>
+            </a>
+        </div>
+        
+        <div class="players">
+            <i class="fas fa-users"></i>
+            <span>25/100 اونلاين</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
