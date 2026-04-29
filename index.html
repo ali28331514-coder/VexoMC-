@@ -3,58 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VexoMC - كرياتيف</title>
+    <title>سرفر تدريب بكس بفب - VexoMC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Orbitron','Courier New',monospace;background:radial-gradient(circle at 20% 80%,#0f3460 0%,#1a1a2e 50%,#16213e 100%);min-height:100vh;overflow:hidden;position:relative;color:#fff}
-        .stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;background:radial-gradient(2px 2px at 20px 30px, #eee, transparent),radial-gradient(2px 2px at 40px 70px, #fff, transparent);background-repeat:repeat;background-size:100px 100px;animation:twinkle 20s linear infinite}
-        .container{position:relative;background:linear-gradient(145deg,rgba(10,25,47,.95),rgba(20,30,60,.98));backdrop-filter:blur(25px);border-radius:30px;padding:40px;box-shadow:0 30px 80px rgba(0,170,255,.3);max-width:500px;width:95%;margin:20px auto;text-align:center;border:2px solid rgba(85,255,255,.4)}
-        .minecraft-text{font-size:2.8em;font-weight:900;background:linear-gradient(45deg,#55ffff,#55ff55,#ffff55,#ffaa00,#ff5555,#ff55ff,#aa00ff,#5555ff);background-size:600% 600%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbowShift 2s linear infinite;margin-bottom:20px;letter-spacing:2px}
-        .server-ip{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,#00d4ff,#0099ff);padding:20px 30px;margin:20px 0;border-radius:20px;cursor:pointer;transition:all .3s ease;border:3px solid rgba(85,255,255,.5);display:inline-block;box-shadow:0 10px 30px rgba(0,212,255,.4)}
-        .server-ip:hover{transform:scale(1.05);box-shadow:0 20px 40px rgba(0,212,255,.6)}
-        .copy-btn{background:linear-gradient(135deg,#ff6b6b,#ee5a52);color:#fff;border:none;padding:15px 35px;font-size:1.1em;border-radius:25px;cursor:pointer;margin:20px 0;transition:all .3s ease;box-shadow:0 8px 25px rgba(255,107,107,.4);font-weight:700}
-        .copy-btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,107,107,.6)}
+        body{font-family:'Orbitron','Courier New',monospace;background:radial-gradient(circle at 20% 80%,#8B0000 0%,#1a1a2e 50%,#16213e 100%);min-height:100vh;overflow:hidden;position:relative;color:#fff}
+        .stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;background:radial-gradient(2px 2px at 20px 30px, #ff4444, transparent),radial-gradient(2px 2px at 40px 70px, #ff6666, transparent);background-repeat:repeat;background-size:100px 100px;animation:twinkle 15s linear infinite}
+        .container{position:relative;background:linear-gradient(145deg,rgba(139,0,0,.95),rgba(26,26,46,.98));backdrop-filter:blur(25px);border-radius:30px;padding:40px;box-shadow:0 30px 80px rgba(255,68,68,.4);max-width:500px;width:95%;margin:20px auto;text-align:center;border:2px solid rgba(255,68,68,.6)}
+        .minecraft-text{font-size:2.8em;font-weight:900;background:linear-gradient(45deg,#ff4444,#ff6666,#ff9999,#ff6666,#ff4444,#cc0000,#ff4444);background-size:600% 600%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbowShift 2s linear infinite;margin-bottom:15px;letter-spacing:2px;text-shadow:0 0 20px rgba(255,68,68,.8)}
+        .server-ip{font-size:2.2em;font-weight:900;background:linear-gradient(135deg,#ff4444,#cc0000);padding:20px 30px;margin:20px 0;border-radius:20px;cursor:pointer;transition:all .3s ease;border:3px solid rgba(255,68,68,.8);display:inline-block;box-shadow:0 10px 30px rgba(255,68,68,.5)}
+        .server-ip:hover{transform:scale(1.05);box-shadow:0 20px 40px rgba(255,68,68,.7)}
+        .copy-btn{background:linear-gradient(135deg,#ff4444,#cc0000);color:#fff;border:none;padding:15px 35px;font-size:1.1em;border-radius:25px;cursor:pointer;margin:20px 0;transition:all .3s ease;box-shadow:0 8px 25px rgba(255,68,68,.5);font-weight:700}
+        .copy-btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,68,68,.7)}
+        .status-bar{display:flex;align-items:center;justify-content:center;gap:10px;margin:15px 0;padding:10px 20px;background:rgba(255,68,68,.3);border-radius:20px;border:1px solid #ff4444;box-shadow:0 0 20px rgba(255,68,68,.4)}
+        .status{width:10px;height:10px;border-radius:50%;background:#ff4444;box-shadow:0 0 15px #ff4444;animation:pulse 1.5s infinite}
         .platforms{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin:25px 0}
         .platform{width:65px;height:65px;border-radius:15px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6em;text-decoration:none;transition:all .3s ease;box-shadow:0 8px 25px rgba(0,0,0,.4)}
-        .platform:hover{transform:translateY(-8px) scale(1.1);box-shadow:0 20px 40px rgba(85,255,255,.5)}
-        .platform.server{background:linear-gradient(135deg,#00d4ff,#0099ff)}
+        .platform:hover{transform:translateY(-8px) scale(1.1);box-shadow:0 20px 40px rgba(255,68,68,.6)}
+        .platform.server{background:linear-gradient(135deg,#ff4444,#cc0000)}
         .platform.discord{background:linear-gradient(135deg,#7289da,#5865f2)}
         .platform.tiktok{background:linear-gradient(135deg,#ff6b6b,#ee5a52)}
         .platform.youtube{background:linear-gradient(135deg,#f39c12,#e67e22)}
-        .status-bar{display:flex;align-items:center;justify-content:center;gap:10px;margin:15px 0;padding:10px 20px;background:rgba(0,255,127,.2);border-radius:20px;border:1px solid #00ff7f}
-        .status{width:10px;height:10px;border-radius:50%;background:#00ff7f;box-shadow:0 0 15px #00ff7f;animation:pulse 1.5s infinite}
-        .players{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:15px;padding:12px 25px;background:rgba(85,255,255,.2);border-radius:20px;border:1px solid rgba(85,255,255,.4)}
+        
+        /* القايمة في الوسط */
+        .qaim{position:relative;margin:25px auto;padding:25px;background:rgba(255,68,68,.2);border-radius:25px;border:2px solid rgba(255,68,68,.5);backdrop-filter:blur(15px);max-width:400px;box-shadow:0 15px 40px rgba(255,68,68,.3)}
+        .qaim-title{font-size:1.4em;margin-bottom:20px;background:linear-gradient(45deg,#ff6666,#ff4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
+        .qaim-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:10px}
+        .qaim-item{padding:12px 15px;background:rgba(255,255,255,.15);border-radius:15px;transition:all .3s ease;border:1px solid rgba(255,255,255,.2);text-align:center;font-size:1em;font-weight:600}
+        .qaim-item:hover{background:rgba(255,68,68,.4);border-color:#ff6666;transform:translateY(-3px);box-shadow:0 10px 25px rgba(255,68,68,.4)}
         
         @keyframes rainbowShift{0%{background-position:0% 50%}100%{background-position:600% 50%}}
         @keyframes twinkle{0%,100%{opacity:.3}50%{opacity:1}}
         @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.2)}}
         
-        @media (max-width:600px){.minecraft-text{font-size:2.2em}.server-ip{font-size:1.9em;padding:18px 25px}.platform{width:55px;height:55px;font-size:1.4em}}
+        @media (max-width:600px){
+            .minecraft-text{font-size:2.2em}
+            .server-ip{font-size:1.9em;padding:18px 25px}
+            .platform{width:55px;height:55px;font-size:1.4em}
+            .qaim-list{grid-template-columns:1fr}
+            .qaim{padding:20px}
+        }
     </style>
 </head>
 <body>
     <div class="stars"></div>
     <div class="container">
-        <div class="minecraft-text">VexoMC</div>
+        <div class="minecraft-text">سرفر تدريب بكس بفب</div>
         <div class="server-ip" onclick="copyIP()">vexomc.play.hosting</div>
-        <button class="copy-btn" onclick="copyIP()">📋 نسخ IP</button>
+        <button class="copy-btn" onclick="copyIP()">⚔️ انضم للسيرفر</button>
         
         <div class="status-bar">
             <div class="status"></div>
-            <span>🟢 السيرفر شغال</span>
+            <span>🔴 سرفر بكس بفب شغال</span>
+        </div>
+        
+        <!-- القايمة في الوسط - شبكة 2x2 -->
+        <div class="qaim">
+            <div class="qaim-title">🏆 قايمة التدريب:</div>
+            <div class="qaim-list">
+                <div class="qaim-item">⚔️ 1v1 Arena</div>
+                <div class="qaim-item">🥊 Box PvP</div>
+                <div class="qaim-item">🎯 Practice Mode</div>
+                <div class="qaim-item">👑 Leaderboard</div>
+            </div>
         </div>
         
         <div class="platforms">
-            <a href="https://vexomc.play.hosting" class="platform server" title="السيرفر"><i class="fas fa-diamond"></i></a>
+            <a href="https://vexomc.play.hosting" class="platform server" title="السيرفر"><i class="fas fa-sword"></i></a>
             <a href="https://discord.gg/t8YaQxZZ" class="platform discord" title="ديسكورد"><i class="fab fa-discord"></i></a>
             <a href="https://www.tiktok.com/@rynoxmc1" class="platform tiktok" title="تيك توك"><i class="fas fa-fire"></i></a>
             <a href="https://www.youtube.com/channel/UCijZ7gc_WXjYEOE-dpLieBA" class="platform youtube" title="يوتيوب"><i class="fas fa-bolt"></i></a>
-        </div>
-        
-        <div class="players">
-            <i class="fas fa-users"></i>
-            <span>25/100 اونلاين</span>
         </div>
     </div>
     
