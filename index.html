@@ -23,8 +23,9 @@
         .copy-btn:hover{transform:translateY(-8px);box-shadow:0 30px 70px rgba(255,68,68,.9)}
         .copy-btn:hover::before{left:100%}
         
-        .status-bar{display:flex;align-items:center;justify-content:center;gap:15px;margin:30px 0;padding:20px 40px;background:rgba(255,68,68,.6);border-radius:28px;border:4px solid #ff4444;box-shadow:0 0 35px rgba(255,68,68,.7)}
-        .status{width:20px;height:20px;border-radius:50%;background:#ff4444;box-shadow:0 0 30px #ff4444;animation:pulse 1s infinite}
+        .status-bar{display:flex;align-items:center;justify-content:center;gap:15px;margin:30px 0;padding:25px 50px;background:rgba(255,68,68,.6);border-radius:28px;border:4px solid #ff4444;box-shadow:0 0 35px rgba(255,68,68,.7)}
+        .status{width:24px;height:24px;border-radius:50%;background:#ff4444;box-shadow:0 0 30px #ff4444;animation:pulse 1s infinite}
+        .status-text{font-size:clamp(1.4em, 4vw, 2.2em) !important;font-weight:900;text-shadow:0 0 20px rgba(255,255,255,.8);letter-spacing:2px}
         
         /* القايمة - Box PvP بس */
         .qaim{position:relative;margin:35px auto;padding:40px 30px;background:linear-gradient(145deg,rgba(255,68,68,.45),rgba(204,0,0,.65));border-radius:32px;border:4px solid rgba(255,68,68,1);backdrop-filter:blur(25px);max-width:420px;box-shadow:0 35px 80px rgba(255,68,68,.6)}
@@ -50,6 +51,7 @@
             .minecraft-text{letter-spacing:3px}
             .ip-section{padding:30px 20px;min-height:110px}
             .server-ip{padding:22px 40px;min-width:250px}
+            .status-bar{padding:22px 40px}
             .qaim{max-width:95%;padding:35px 25px}
             .platform{width:100px;height:100px;font-size:3em}
         }
@@ -57,6 +59,7 @@
         @media (max-width:480px){
             .container{padding:30px 20px;border-radius:20px}
             .server-ip{padding:20px 35px;font-size:2em}
+            .status-bar{padding:20px 30px}
             .platform{width:90px;height:90px;font-size:2.5em}
         }
         
@@ -79,7 +82,7 @@
         
         <div class="status-bar">
             <div class="status"></div>
-            <span>🟢 Server Online</span>
+            <span class="status-text">🟢 Server Online</span>
         </div>
         
         <!-- القايمة - Box PvP بس -->
